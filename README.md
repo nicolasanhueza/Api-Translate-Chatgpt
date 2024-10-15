@@ -31,26 +31,45 @@ Esta es una API de traducción que utiliza el modelo GPT-3.5-turbo de OpenAI par
 
 1. Clona el repositorio:
 
-   ```bash
-   git clone https://github.com/nicolasanhueza/Api-Translate-Chatgpt.git
-   cd Api-Translate-Chatgpt
+  ```bash
+  git clone https://github.com/nicolasanhueza/Api-Translate-Chatgpt.git
+  cd Api-Translate-Chatgpt
+  ```
 
 2. Crea un entorno virtual (opcional pero recomendado):
-   
-   `python -m venv venv`
-   `source venv/bin/activate`  # En Windows usa `venv\Scripts\activate`
+  
+  ```bash
+  python -m venv venv
+  ```
+
+3. Activa el entorno virtual:
+
+  - En macOS/Linux:
+
+    ```bash
+    source venv/bin/activate
+    ```
+  - En Windows:
+
+    ```bash
+    venv\Scripts\activate
+    ```
 
 3. Instala las dependencias desde el archivo requirements.txt:
 
-   pip install -r requirements.txt
+  ```bash
+  pip install -r requirements.txt
+  ```
 
 4. Configura tus variables de entorno. Crea un archivo .env en la raíz del proyecto y añade tu clave de API de OpenAI:
 
-   OPENAI_API_KEY=tu_clave_api_aqui
+  `OPENAI_API_KEY=tu_clave_api_aqui`
 
 ## USO
 
-   python app.py
+  ```bash
+  python app.py
+  ```
 
 ## Ejemplo de Solicitud
 
