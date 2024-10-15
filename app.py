@@ -1,11 +1,13 @@
 from flask import Flask, request, jsonify
 from translate import translate_text
 from dotenv import load_dotenv
+from flask_cors import CORS
 import os
 
 # Load environment variables from .env file
 load_dotenv()
 app = Flask(__name__)
+CORS(app, resources={r"/translate": {"origins": "*"}})
 
 # Define a route for the translation endpoint
 @app.route('/translate', methods=['POST'])
