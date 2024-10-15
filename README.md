@@ -37,35 +37,39 @@ Esta es una API de traducción que utiliza el modelo GPT-3.5-turbo de OpenAI par
 
 2. Crea un entorno virtual (opcional pero recomendado):
 
+  ```bash
   python -m venv venv
   source venv/bin/activate  # En Windows usa `venv\Scripts\activate`
 
 3. Instala las dependencias desde el archivo requirements.txt:
 
+  ```bash
   pip install -r requirements.txt
 
 4. Configura tus variables de entorno. Crea un archivo .env en la raíz del proyecto y añade tu clave de API de OpenAI:
 
+  ```bash
   OPENAI_API_KEY=tu_clave_api_aqui
 
 ## USO
 
-python app.py
+  ```
+  python app.py
 
 ## Ejemplo de Solicitud
 
--Puedes realizar una solicitud POST a /translate con el siguiente cuerpo JSON:
+- Puedes realizar una solicitud POST a /translate con el siguiente cuerpo JSON:
 
-  ´´´json
+  ```json
   {
     "fromLanguage": "Español",
     "toLanguage": "English",
     "text": "Hola mundo"
   }
 
--La respuesta será un JSON que contiene el texto traducido:
+- La respuesta será un JSON que contiene el texto traducido:
 
-  ´´´json
+  ```json
   {
     "total_tokens": 115,
     "translated_text": "The value now is 363"
