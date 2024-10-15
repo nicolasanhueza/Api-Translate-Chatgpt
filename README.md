@@ -37,23 +37,20 @@ Esta es una API de traducción que utiliza el modelo GPT-3.5-turbo de OpenAI par
 
 2. Crea un entorno virtual (opcional pero recomendado):
 
-  ```zsh
-  python -m venv venv
-  source venv/bin/activate  # En Windows usa `venv\Scripts\activate`
+   python -m venv venv
+   source venv/bin/activate  # En Windows usa `venv\Scripts\activate`
 
 3. Instala las dependencias desde el archivo requirements.txt:
 
-  ```zsh
-  pip install -r requirements.txt
+   pip install -r requirements.txt
 
 4. Configura tus variables de entorno. Crea un archivo .env en la raíz del proyecto y añade tu clave de API de OpenAI:
 
-  ```zsh
-  OPENAI_API_KEY=tu_clave_api_aqui
+   OPENAI_API_KEY=tu_clave_api_aqui
 
 ## USO
 
-python app.py
+   python app.py
 
 ## Ejemplo de Solicitud
 
