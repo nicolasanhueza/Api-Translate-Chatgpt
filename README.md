@@ -36,9 +36,9 @@ Esta es una API de traducción que utiliza el modelo GPT-3.5-turbo de OpenAI par
    cd Api-Translate-Chatgpt
 
 2. Crea un entorno virtual (opcional pero recomendado):
-
-   python -m venv venv
-   source venv/bin/activate  # En Windows usa `venv\Scripts\activate`
+   
+   `python -m venv venv`
+   `source venv/bin/activate`  # En Windows usa `venv\Scripts\activate`
 
 3. Instala las dependencias desde el archivo requirements.txt:
 
