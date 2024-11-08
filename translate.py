@@ -8,13 +8,6 @@ client = OpenAI()
 # Set up OpenAI API key
 client.api_key = os.getenv("OPENAI_API_KEY")
 
-SUPPORTED_LANGUAGES = {
-    'Español': 'es',
-    'English': 'en',
-    'Deutsch': 'de',
-    # Add more languages here
-}
-
 def translate_text(from_language, to_language, text):
     if from_language == to_language:
         return {"translated_text": text, "total_tokens": 0}
