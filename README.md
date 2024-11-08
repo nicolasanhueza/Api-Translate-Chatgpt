@@ -81,7 +81,7 @@ Solicitud mediante postman:
 
     ```json
     {
-      "fromLanguage": "Español",
+      "fromLanguage": "Español", // puede ser "auto" para detectar el idioma
       "toLanguage": "English",
       "text": "Hola mundo"
     }
