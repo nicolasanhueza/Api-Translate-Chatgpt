@@ -74,7 +74,8 @@ Esta es una API de traducción que utiliza el modelo GPT-3.5-turbo de OpenAI par
   ```
 
 ## Ejemplo de Solicitud
-Para realizar una solicitud de traducción, envía una solicitud POST a https://api-translate-chatgpt.vercel.app/translate
+Para realizar una solicitud de traducción, envía una solicitud POST a https://api-translate-chatgpt.vercel.app/translate  
+
 Solicitud mediante postman:
   - El cuerpo de la solicitud debe estar en formato JSON y configurado como `raw` en el tipo de contenido:
 
@@ -109,7 +110,7 @@ Solicitud mediante otros lenguajes:
     }),
   });
   const data = await response.json();
-  console.log(data.translated_text); // Debería mostrar "Hello world"
+  console.log(data.translated_text);
   };
   translateText();
   ```
