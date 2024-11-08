@@ -9,6 +9,8 @@ Esta es una API de traducción que utiliza el modelo GPT-3.5-turbo de OpenAI par
 - [Instalación](#instalación)
 - [Uso](#uso)
 - [Ejemplo de Solicitud](#ejemplo-de-solicitud)
+- [Ejemplo de Errores](#ejemplo-de-errores)
+- [Testing](#testing)
 - [Manejo de CORS](#manejo-de-cors)
 - [Licencia](#licencia)
 
@@ -72,23 +74,101 @@ Esta es una API de traducción que utiliza el modelo GPT-3.5-turbo de OpenAI par
   ```
 
 ## Ejemplo de Solicitud
+Para realizar una solicitud de traducción, envía una solicitud POST a https://api-translate-chatgpt.vercel.app/translate
+Solicitud mediante postman:
+  - El cuerpo de la solicitud debe estar en formato JSON y configurado como `raw` en el tipo de contenido:
 
-- Puedes realizar una solicitud POST a /translate con el siguiente cuerpo JSON:
+    ```json
+    {
+      "fromLanguage": "Español",
+      "toLanguage": "English",
+      "text": "Hola mundo"
+    }
 
+  - La respuesta será un JSON que contiene el texto traducido:
+
+    ```json
+    {
+      "total_tokens": 106,
+      "translated_text": "Hello world"
+    }
+
+Solicitud mediante otros lenguajes:
+  - Solicitud desde React:
+  ```jsx
+  const translateText = async () => {
+  const response = await fetch('https://api-translate-chatgpt.vercel.app/translate', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      fromLanguage: 'Español',
+      toLanguage: 'English',
+      text: 'Hola mundo',
+    }),
+  });
+  const data = await response.json();
+  console.log(data.translated_text); // Debería mostrar "Hello world"
+  };
+  translateText();
+  ```
+  - solicitud desde Python:
+  ```python
+  import requests
+
+  url = "https://api-translate-chatgpt.vercel.app/translate"
+  data = {
+      "fromLanguage": "Español",
+      "toLanguage": "English",
+      "text": "Hola mundo"
+  }
+  headers = {"Content-Type": "application/json"}
+
+  response = requests.post(url, json=data, headers=headers)
+  print(response.json().get("translated_text"))
+  ```
+  - Solicitud desde cURL:
+  ```curl
+    curl -X POST https://api-translate-chatgpt.vercel.app/translate \
+  -H "Content-Type: application/json" \
+  -d '{
+    "fromLanguage": "Español",
+    "toLanguage": "English",
+    "text": "Hola mundo"
+  }'
+  ```
+
+## Ejemplo de Errores
+
+- Solicitud inválida (falta campo):
   ```json
   {
-    "fromLanguage": "Español",
+    "fromLanguage": "",
     "toLanguage": "English",
     "text": "Hola mundo"
   }
 
-- La respuesta será un JSON que contiene el texto traducido:
+- Error al procesar la traducción:
 
   ```json
   {
-    "total_tokens": 115,
-    "translated_text": "The value now is 363"
+    "error": "The 'fromLanguage' field cannot be empty."
   }
+  
+
+## Testing
+
+Este proyecto utiliza `pytest` para ejecutar las pruebas unitarias. Las pruebas están ubicadas en la carpeta `test`.
+
+Para ejecutar las pruebas:
+
+1. Navega al directorio raíz del proyecto.
+2. Ejecuta el siguiente comando:
+
+  ```bash
+  pytest test/
+  ```
 
 ## Manejo de CORS
 
