@@ -131,7 +131,7 @@ Solicitud mediante otros lenguajes:
   ```
   - Solicitud desde cURL:
   ```curl
-    curl -X POST https://api-translate-chatgpt.vercel.app/translate \
+  curl -X POST https://api-translate-chatgpt.vercel.app/translate \
   -H "Content-Type: application/json" \
   -d '{
     "fromLanguage": "Español",
